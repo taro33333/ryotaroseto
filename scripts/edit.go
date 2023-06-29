@@ -5,7 +5,7 @@ import (
 )
 
 const readmeFile = "README.md"
-const docs_str = "![](./profile-3d-contrib/profile-south-season.svg)"
+const docs_str = "![](./profile-3d-contrib/profile-gitblock.svg)"
 
 func Edit() error {
 	f, err := os.Create(readmeFile)
