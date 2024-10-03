@@ -1,6 +1,7 @@
 package scripts
 
 import (
+	"log"
 	"os"
 )
 
@@ -14,10 +15,11 @@ func Edit() error {
 		return err
 	}
 	defer func() {
-		f.Close()
+		if err := f.Close(); err != nil {
+			log.Fatal(err)
+		}
 	}()
-	_, err = f.Write([]byte(header() + docs_str))
-	if err != nil {
+	if _, err = f.Write([]byte(header() + docs_str)); err != nil {
 		return err
 	}
 
